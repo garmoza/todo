@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react'
 
-import { initialItems } from './scripts/data';
+import { initialItems } from './scripts/data'
+import useLocalStorage from './semiPersistent'
 
 interface TodoItem {
-  id: number;
-  title: string;
-  completed: boolean;
+  id: number
+  title: string
+  completed: boolean
 }
 
 interface ListProps {
-  items: TodoItem[];
+  items: TodoItem[]
 }
 
-function App() {
-  const [items, setItems] = useState(initialItems);
+function App (): JSX.Element {
+  const [items] = useLocalStorage<TodoItem[]>('todos', initialItems)
 
   return (
     <div className="App">
@@ -24,26 +25,28 @@ function App() {
       </button>
       <List items={items} />
     </div>
-  );
+  )
 }
 
-const List = ({ items }: ListProps) => (
+const List: React.FC<ListProps> = ({ items }) => (
   <>
     {items.map(item => (
       <Item key={item.id} {...item} />
     ))}
   </>
-);
+)
 
-const Item = ({ id, title, completed }: TodoItem) => (
+const Item: React.FC<TodoItem> = ({ id, title, completed }) => (
   <div>
     <h3>{title}</h3>
-    {completed ? (
+    {completed
+      ? (
       <p>Completed</p>
-    ) : (
+        )
+      : (
       <p>Active</p>
-    )}
+        )}
   </div>
-);
+)
 
-export default App;
+export default App
