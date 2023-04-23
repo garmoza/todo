@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { initialItems } from './scripts/data'
 import useLocalStorage from './semiPersistent'
@@ -14,15 +14,38 @@ interface ListProps {
 }
 
 function App (): JSX.Element {
-  const [items] = useLocalStorage<TodoItem[]>('todos', initialItems)
+  const [items, setItems] = useLocalStorage<TodoItem[]>('todos', initialItems)
+  const [newItem, setNewItem] = useState('')
+
+  function handleSubmit (e: React.FormEvent<HTMLFormElement>): void {
+    e.preventDefault()
+
+    const lastItem = items.reduce(
+      (previousItem, currentItem) => previousItem.id > currentItem.id ? previousItem : currentItem
+    )
+    setItems([
+      ...items,
+      {
+        id: lastItem.id + 1,
+        title: newItem,
+        completed: false
+      }
+    ])
+    setNewItem('')
+  }
 
   return (
-    <div className="App">
+    <div className='App'>
       <h2>TODO App</h2>
-      <input/>
-      <button type='button' >
-        Add
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={newItem}
+          onChange={(event) => { setNewItem(event.target.value) }}
+        />
+        <button type='submit'>
+          Add
+        </button>
+      </form>
       <List items={items} />
     </div>
   )
@@ -36,17 +59,24 @@ const List: React.FC<ListProps> = ({ items }) => (
   </>
 )
 
-const Item: React.FC<TodoItem> = ({ id, title, completed }) => (
-  <div>
-    <h3>{title}</h3>
-    {completed
-      ? (
-      <p>Completed</p>
-        )
-      : (
-      <p>Active</p>
-        )}
-  </div>
-)
+const Item: React.FC<TodoItem> = ({ id, title, completed }) => {
+  const [isEditing, setIsEditing] = useState(false)
+
+  return (
+    <div>
+      <h3>{title}</h3>
+      <button onClick={() => { setIsEditing(!isEditing) }} >
+        {isEditing ? 'Save' : 'Edit'}
+      </button>
+      {completed
+        ? (
+        <p>Completed</p>
+          )
+        : (
+        <p>Active</p>
+          )}
+    </div>
+  )
+}
 
 export default App
