@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import { initialItems } from './scripts/data';
+
+interface TodoItem {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+interface ListProps {
+  items: TodoItem[];
+}
 
 function App() {
+  const [items, setItems] = useState(initialItems);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>TODO App</h2>
+      <input/>
+      <button type='button' >
+        Add
+      </button>
+      <List items={items} />
     </div>
   );
 }
+
+const List = ({ items }: ListProps) => (
+  <>
+    {items.map(item => (
+      <Item key={item.id} {...item} />
+    ))}
+  </>
+);
+
+const Item = ({ id, title, completed }: TodoItem) => (
+  <div>
+    <h3>{title}</h3>
+    {completed ? (
+      <p>Completed</p>
+    ) : (
+      <p>Active</p>
+    )}
+  </div>
+);
 
 export default App;
