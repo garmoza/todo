@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { initialItems } from './scripts/data'
-import useLocalStorage from './semiPersistent'
+import { useLocalStorageReducer } from './semiPersistent'
 
 interface TodoItem {
   id: number
@@ -13,9 +13,42 @@ interface ListProps {
   items: TodoItem[]
 }
 
+interface ItemAddAction {
+  type: 'ITEM_ADD'
+  payload: TodoItem
+}
+
+interface ItemRemoveAction {
+  type: 'ITEM_REMOVE'
+}
+
+type ItemsAction =
+  | ItemAddAction
+  | ItemRemoveAction
+
+const itemsReducer = (
+  state: TodoItem[],
+  action: ItemsAction
+): TodoItem[] => {
+  switch (action.type) {
+    case 'ITEM_ADD':
+      return [
+        { ...action.payload },
+        ...state
+      ]
+    case 'ITEM_REMOVE':
+      return [
+        ...state
+      ]
+    default:
+      throw new Error()
+  }
+}
+
 function App (): JSX.Element {
-  const [items, setItems] = useLocalStorage<TodoItem[]>('todos', initialItems)
-  const [newItem, setNewItem] = useState('')
+  // const [items, setItems] = useLocalStorageState<TodoItem[]>('todos', initialItems)
+  const [items, dispatchItems] = useLocalStorageReducer('todos', itemsReducer, initialItems)
+  const [newItem, setNewItem] = useState('') // TODO: test and use useLocalStorageState()
 
   function handleSubmit (e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault()
@@ -23,14 +56,14 @@ function App (): JSX.Element {
     const lastItem = items.reduce(
       (previousItem, currentItem) => previousItem.id > currentItem.id ? previousItem : currentItem
     )
-    setItems([
-      ...items,
-      {
+    dispatchItems({
+      type: 'ITEM_ADD',
+      payload: {
         id: lastItem.id + 1,
         title: newItem,
         completed: false
       }
-    ])
+    })
     setNewItem('')
   }
 
