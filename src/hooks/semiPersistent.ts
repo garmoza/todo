@@ -1,9 +1,11 @@
 import { useReducer, useState } from 'react'
 
+import type { Dispatch, SetStateAction, Reducer, ReducerState, ReducerAction } from 'react'
+
 export function useLocalStorageState<S> (
   key: string,
   initialState: S
-): [S, React.Dispatch<React.SetStateAction<S>>] {
+): [S, Dispatch<SetStateAction<S>>] {
   const jsonValue = localStorage.getItem(key)
   initialState = jsonValue != null ? JSON.parse(jsonValue) : initialState
 
@@ -16,15 +18,15 @@ export function useLocalStorageState<S> (
   return [value, setLocalStorageValue]
 }
 
-export function useLocalStorageReducer<R extends React.Reducer<any, any>> (
+export function useLocalStorageReducer<R extends Reducer<any, any>> (
   key: string,
   reducer: R,
-  initialState: React.ReducerState<R>
-): [React.ReducerState<R>, React.Dispatch<React.ReducerAction<R>>] {
+  initialState: ReducerState<R>
+): [ReducerState<R>, Dispatch<ReducerAction<R>>] {
   const jsonValue = localStorage.getItem(key)
   initialState = jsonValue != null ? JSON.parse(jsonValue) : initialState
 
-  const localStorageReducer = (state: React.ReducerState<R>, action: React.ReducerAction<R>): React.ReducerState<R> => {
+  const localStorageReducer = (state: ReducerState<R>, action: ReducerAction<R>): ReducerState<R> => {
     const newState = reducer(state, action)
     localStorage.setItem(key, JSON.stringify(newState))
     return newState
