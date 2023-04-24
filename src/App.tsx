@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useLocalStorageState } from './hooks/semiPersistent'
 
 import type { TodoItem } from './types'
-import { ItemsProvider, useItems, useItemsReducer } from './components/ItemsContext'
+import { ItemsProvider, useItems, useItemsDispatch, useItemsReducer } from './components/ItemsContext'
 
 function App (): JSX.Element {
   return (
@@ -63,6 +63,8 @@ const List: React.FC = () => {
 }
 
 const Item: React.FC<TodoItem> = ({ id, title, completed }) => {
+  const itemsDispatch = useItemsDispatch()
+
   const [isEditing, setIsEditing] = useState(false)
 
   return (
@@ -70,6 +72,18 @@ const Item: React.FC<TodoItem> = ({ id, title, completed }) => {
       <h3>{title}</h3>
       <button onClick={() => { setIsEditing(!isEditing) }} >
         {isEditing ? 'Save' : 'Edit'}
+      </button>
+      <button onClick={() => {
+        itemsDispatch({
+          type: 'ITEM_REMOVE',
+          payload: {
+            id,
+            title,
+            completed
+          }
+        })
+      }}>
+        Remove
       </button>
       {completed
         ? (

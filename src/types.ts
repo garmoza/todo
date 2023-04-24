@@ -11,6 +11,7 @@ interface ItemAddAction {
 
 interface ItemRemoveAction {
   type: 'ITEM_REMOVE'
+  payload: TodoItem
 }
 
 export type ItemsAction =

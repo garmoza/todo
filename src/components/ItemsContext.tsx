@@ -47,9 +47,7 @@ const itemsReducer = (
         ...state
       ]
     case 'ITEM_REMOVE':
-      return [
-        ...state
-      ]
+      return state.filter(item => item.id !== action.payload.id)
     default:
       throw new Error()
   }
