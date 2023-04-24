@@ -2,21 +2,8 @@ import { useReducer, useState } from 'react'
 
 export function useLocalStorageState<S> (
   key: string,
-  initialState: any
+  initialState: S
 ): [S, React.Dispatch<React.SetStateAction<S>>] {
-  // const [jsonValue, setJsonValue] = useState(
-  //   localStorage.getItem(key) ?? JSON.stringify(initialState)
-  // )
-  // localStorage.setItem(key, jsonValue)
-
-  // return [
-  //   JSON.parse(jsonValue),
-  //   (value: any) => {
-  //     setJsonValue(JSON.stringify(value))
-  //     localStorage.setItem(key, JSON.stringify(value))
-  //   }
-  // ]
-
   const jsonValue = localStorage.getItem(key)
   initialState = jsonValue != null ? JSON.parse(jsonValue) : initialState
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { initialItems } from './scripts/data'
-import { useLocalStorageReducer } from './semiPersistent'
+import { useLocalStorageState, useLocalStorageReducer } from './semiPersistent'
 
 interface TodoItem {
   id: number
@@ -46,9 +46,8 @@ const itemsReducer = (
 }
 
 function App (): JSX.Element {
-  // const [items, setItems] = useLocalStorageState<TodoItem[]>('todos', initialItems)
   const [items, dispatchItems] = useLocalStorageReducer('todos', itemsReducer, initialItems)
-  const [newItem, setNewItem] = useState('') // TODO: test and use useLocalStorageState()
+  const [newItem, setNewItem] = useLocalStorageState('newItem', '')
 
   function handleSubmit (e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault()
