@@ -23,13 +23,17 @@ const NewItemForm: React.FC = () => {
   function handleSubmit (e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault()
 
-    const lastItem = items.reduce(
-      (previousItem, currentItem) => previousItem.id > currentItem.id ? previousItem : currentItem
-    )
+    let lastId = 0
+    if (items.length > 0) {
+      lastId = items.reduce(
+        (previousItem, currentItem) => previousItem.id > currentItem.id ? previousItem : currentItem
+      ).id
+    }
+
     itemsDispatch({
       type: 'ITEM_ADD',
       payload: {
-        id: lastItem.id + 1,
+        id: lastId + 1,
         title: newItem,
         completed: false
       }
