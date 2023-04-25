@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
 import { useLocalStorageState } from './hooks/semiPersistent'
-
-import type { TodoItem } from './types'
 import { ItemsProvider, useItems, useItemsDispatch, useItemsReducer } from './components/ItemsContext'
+import type { TodoItem } from './types'
 
 function App (): JSX.Element {
   return (
