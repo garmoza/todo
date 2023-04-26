@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Input, createStyles, rem } from '@mantine/core'
-import { IconTrash, IconEdit, IconCheck } from '@tabler/icons-react'
+import { IconTrash, IconEdit, IconCheck, IconCircleCheckFilled } from '@tabler/icons-react'
 
 import { useItemsDispatch } from './ItemsContext'
 
@@ -19,6 +19,17 @@ const useStyles = createStyles(() => ({
   input: {
     marginRight: rem(5),
     margin: `${rem(15)} 0`
+  },
+  icons: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  bottomIcons: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    marginBottom: '-10px',
+    marginRight: '-20px'
   }
 }))
 
@@ -60,7 +71,8 @@ export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
       : (
         <div className={classes.item}>
           <h3>{inputValue}</h3>
-          <div>
+          <div className={classes.icons}>
+            <div>
             <IconEdit onClick={() => { setIsEditing(!isEditing) }} />
             <IconTrash color='red' onClick={() => {
               itemsDispatch({
@@ -72,6 +84,10 @@ export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
                 }
               })
             }} />
+            </div>
+            <div className={classes.bottomIcons}>
+            <IconCircleCheckFilled size={rem(40)} />
+            </div>
           </div>
         </div>
         )
