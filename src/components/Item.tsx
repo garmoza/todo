@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { createStyles } from '@mantine/core'
-import { IconTrash, IconEdit } from '@tabler/icons-react'
+import { Input, createStyles, rem } from '@mantine/core'
+import { IconTrash, IconEdit, IconCheck } from '@tabler/icons-react'
 
 import { useItemsDispatch } from './ItemsContext'
 
@@ -11,6 +11,14 @@ const useStyles = createStyles(() => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%'
+  },
+  editing: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  input: {
+    marginRight: rem(5),
+    margin: `${rem(15)} 0`
   }
 }))
 
@@ -18,27 +26,56 @@ export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
   const itemsDispatch = useItemsDispatch()
 
   const [isEditing, setIsEditing] = useState(false)
+  const [inputValue, setInputValue] = useState(title)
 
   const { classes } = useStyles()
 
   return (
-    <div className={classes.item}>
-      <h3>{title}</h3>
-      <div>
-        <IconEdit onClick={() => { setIsEditing(!isEditing) }} >
-          {isEditing ? 'Save' : 'Edit'}
-        </IconEdit>
-        <IconTrash color='red' onClick={() => {
-          itemsDispatch({
-            type: 'ITEM_REMOVE',
-            payload: {
-              id,
-              title,
-              completed
-            }
-          })
-        }}/>
-      </div>
-    </div>
+    <>
+    {isEditing
+      ? (
+        <div className={classes.editing}>
+          <Input
+            className={classes.input}
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value)
+            }}
+          />
+          <IconCheck
+            onClick={() => {
+              itemsDispatch({
+                type: 'ITEM_UPDATE',
+                payload: {
+                  id,
+                  title: inputValue,
+                  completed
+                }
+              })
+              setIsEditing(false)
+            }}
+          />
+        </div>
+        )
+      : (
+        <div className={classes.item}>
+          <h3>{inputValue}</h3>
+          <div>
+            <IconEdit onClick={() => { setIsEditing(!isEditing) }} />
+            <IconTrash color='red' onClick={() => {
+              itemsDispatch({
+                type: 'ITEM_REMOVE',
+                payload: {
+                  id,
+                  title,
+                  completed
+                }
+              })
+            }} />
+          </div>
+        </div>
+        )
+    }
+    </>
   )
 }

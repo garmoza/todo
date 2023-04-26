@@ -48,6 +48,8 @@ const itemsReducer = (
       ]
     case 'ITEM_REMOVE':
       return state.filter(item => item.id !== action.payload.id)
+    case 'ITEM_UPDATE':
+      return state.map(item => item.id === action.payload.id ? action.payload : item)
     case 'ITEMS_UPDATE':
       return action.payload
     case 'ITEMS_REORDER': {

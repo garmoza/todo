@@ -44,6 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 Uses eslint for code style validation. The path for the files to be checked is specified in package.json (`"lint": "eslint ./src"`).
 Use .eslintignore for ignore files (files are searched in `./src`).
 
+```
+npx eslint ./src/App.tsx
+
+npx eslint --fix ./src/App.tsx
+```
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

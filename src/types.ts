@@ -14,6 +14,11 @@ interface ItemRemoveAction {
   payload: TodoItem
 }
 
+interface itemUpdateAction {
+  type: 'ITEM_UPDATE'
+  payload: TodoItem
+}
+
 interface ItemsUpdateAction {
   type: 'ITEMS_UPDATE'
   payload: TodoItem[]
@@ -30,5 +35,6 @@ interface ItemsReorderAction {
 export type ItemsAction =
   | ItemAddAction
   | ItemRemoveAction
+  | itemUpdateAction
   | ItemsUpdateAction
   | ItemsReorderAction
