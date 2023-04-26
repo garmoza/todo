@@ -48,6 +48,20 @@ const itemsReducer = (
       ]
     case 'ITEM_REMOVE':
       return state.filter(item => item.id !== action.payload.id)
+    case 'ITEMS_UPDATE':
+      return action.payload
+    case 'ITEMS_REORDER': {
+      const from = action.payload.from
+      const to = action.payload.to
+
+      const cloned = [...state]
+      const item = state[from]
+
+      cloned.splice(from, 1)
+      cloned.splice(to, 0, item)
+
+      return cloned
+    }
     default:
       throw new Error()
   }
