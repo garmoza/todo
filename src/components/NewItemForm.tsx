@@ -2,12 +2,28 @@ import React from 'react'
 
 import { useLocalStorageState } from '../hooks/semiPersistent'
 import { useItemsReducer } from '../components/ItemsContext'
-import { Button, Input } from '@mantine/core'
+import { Button, Input, createStyles, rem } from '@mantine/core'
+
+const useStyles = createStyles(() => ({
+  form: {
+    display: 'flex',
+    margin: `${rem(10)} 0`
+  },
+  input: {
+    width: '100%',
+    marginRight: rem(10)
+  },
+  button: {
+    minWidth: rem(100)
+  }
+}))
 
 export default function NewItemForm (): JSX.Element {
   const [items, itemsDispatch] = useItemsReducer()
 
   const [newItem, setNewItem] = useLocalStorageState('newItem', '')
+
+  const { classes } = useStyles()
 
   function handleSubmit (e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault()
@@ -31,12 +47,13 @@ export default function NewItemForm (): JSX.Element {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <Input
         value={newItem}
         onChange={(event) => { setNewItem(event.target.value) }}
+        className={classes.input}
       ></Input>
-      <Button type='submit'>
+      <Button type='submit' className={classes.button}>
         Add
       </Button>
     </form>
