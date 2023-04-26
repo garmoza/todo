@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useLocalStorageState } from '../hooks/semiPersistent'
-import { useItemsReducer } from '../components/ItemsContext'
+import { useItemsReducer } from './ItemsContext'
 import { Button, Input, createStyles, rem } from '@mantine/core'
 
 const useStyles = createStyles(() => ({

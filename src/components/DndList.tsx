@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createStyles, rem } from '@mantine/core'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { IconGripVertical } from '@tabler/icons-react'
 
-import { useItemsDispatch, useItemsReducer } from '../components/ItemsContext'
-
-import type { TodoItem } from '../types'
+import { useItemsReducer } from './ItemsContext'
+import Item from './Item'
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -85,39 +84,5 @@ export default function DndList (): JSX.Element {
         )}
       </Droppable>
     </DragDropContext>
-  )
-}
-
-const Item: React.FC<TodoItem> = ({ id, title, completed }) => {
-  const itemsDispatch = useItemsDispatch()
-
-  const [isEditing, setIsEditing] = useState(false)
-
-  return (
-    <div>
-      <h3>{title}</h3>
-      <button onClick={() => { setIsEditing(!isEditing) }} >
-        {isEditing ? 'Save' : 'Edit'}
-      </button>
-      <button onClick={() => {
-        itemsDispatch({
-          type: 'ITEM_REMOVE',
-          payload: {
-            id,
-            title,
-            completed
-          }
-        })
-      }}>
-        Remove
-      </button>
-      {completed
-        ? (
-        <p>Completed</p>
-          )
-        : (
-        <p>Active</p>
-          )}
-    </div>
   )
 }
