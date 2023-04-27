@@ -41,15 +41,15 @@ const useStyles = createStyles((theme) => ({
 
 const links = [
   {
-    link: '?yep',
+    link: '?all',
     label: 'All'
   },
   {
-    link: '?yep',
+    link: '?active',
     label: 'Active'
   },
   {
-    link: '?yep',
+    link: '?completed',
     label: 'Completed'
   }
 ]
