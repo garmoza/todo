@@ -6,7 +6,7 @@ import { useItemsDispatch } from './ItemsContext'
 
 import type { TodoItem } from '../types'
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
   item: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -34,6 +34,12 @@ const useStyles = createStyles(() => ({
 }))
 
 export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
+  return (
+    <>{completed ? <CompletedItem id={id} title={title} completed={completed} /> : <ActiveItem id={id} title={title} completed={completed} />}</>
+  )
+}
+
+function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
   const itemsDispatch = useItemsDispatch()
 
   const [isEditing, setIsEditing] = useState(false)
@@ -86,12 +92,47 @@ export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
             }} />
             </div>
             <div className={classes.bottomIcons}>
-            <IconCircleCheckFilled size={rem(40)} />
+            <IconCircleCheckFilled size={rem(40)} onClick={() => {
+              itemsDispatch({
+                type: 'ITEM_UPDATE',
+                payload: {
+                  id,
+                  title,
+                  completed: true
+                }
+              })
+            }} />
             </div>
           </div>
         </div>
         )
     }
     </>
+  )
+}
+
+function CompletedItem ({ id, title, completed }: TodoItem): JSX.Element {
+  const itemsDispatch = useItemsDispatch()
+
+  const { classes } = useStyles()
+
+  return (
+    <div className={classes.item}>
+      <h3>{title}</h3>
+      <div className={classes.icons}>
+        <div>
+        <IconTrash color='red' onClick={() => {
+          itemsDispatch({
+            type: 'ITEM_REMOVE',
+            payload: {
+              id,
+              title,
+              completed
+            }
+          })
+        }} />
+        </div>
+      </div>
+    </div>
   )
 }

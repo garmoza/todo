@@ -20,6 +20,10 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.sm
   },
 
+  itemCompleted: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.blue[7] : theme.colors.blue[4]
+  },
+
   itemDragging: {
     boxShadow: theme.shadows.sm
   },
@@ -50,7 +54,10 @@ export default function DndList (): JSX.Element {
     <Draggable key={item.id} index={index} draggableId={item.id.toString()}>
       {(provided, snapshot) => (
         <div
-          className={cx(classes.item, { [classes.itemDragging]: snapshot.isDragging })}
+          className={cx(classes.item, {
+            [classes.itemDragging]: snapshot.isDragging,
+            [classes.itemCompleted]: item.completed
+          })}
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
