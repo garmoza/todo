@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Header, useMantineColorScheme, useMantineTheme, Switch, Container, Group, createStyles, rem } from '@mantine/core'
 import { IconSun, IconMoonStars } from '@tabler/icons-react'
 
@@ -39,23 +39,18 @@ const useStyles = createStyles((theme) => ({
   }
 }))
 
-const links = [
-  {
-    link: '?all',
-    label: 'All'
-  },
-  {
-    link: '?active',
-    label: 'Active'
-  },
-  {
-    link: '?completed',
-    label: 'Completed'
-  }
-]
+interface Link {
+  link: string
+  label: string
+}
 
-export default function SimpleHeader (): JSX.Element {
-  const [active, setActive] = useState(links[0].link)
+interface SimpleHeaderProps {
+  links: Link[]
+  active: string
+  setActive: React.Dispatch<React.SetStateAction<string>>
+}
+
+export default function SimpleHeader ({ links, active, setActive }: SimpleHeaderProps): JSX.Element {
   const { classes, cx } = useStyles()
 
   const items = links.map((link) => (

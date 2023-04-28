@@ -18,6 +18,21 @@ const useStyles = createStyles((theme) => ({
   }
 }))
 
+const links = [
+  {
+    link: 'all',
+    label: 'All'
+  },
+  {
+    link: 'active',
+    label: 'Active'
+  },
+  {
+    link: 'completed',
+    label: 'Completed'
+  }
+]
+
 function App (): JSX.Element {
   const { classes } = useStyles()
 
@@ -26,16 +41,18 @@ function App (): JSX.Element {
     setColorScheme(value ?? (colorScheme === 'dark' ? 'light' : 'dark'))
   }
 
+  const [active, setActive] = useState(links[0].link)
+
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
         <ItemsProvider>
-          <SimpleHeader />
+          <SimpleHeader links={links} active={active} setActive={setActive} />
           <div className={classes.page}>
             <h2>TODO App</h2>
             <Card withBorder radius="md" className={classes.card}>
               <NewItemForm />
-              <DndList />
+              <DndList active={active} />
             </Card>
           </div>
         </ItemsProvider>

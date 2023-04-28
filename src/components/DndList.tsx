@@ -46,11 +46,25 @@ const useStyles = createStyles((theme) => ({
   }
 }))
 
-export default function DndList (): JSX.Element {
+interface DndListProps {
+  active: string
+}
+
+export default function DndList ({ active }: DndListProps): JSX.Element {
   const { classes, cx } = useStyles()
   const [items, itemsDispatch] = useItemsReducer()
 
-  const todos = items.map((item, index) => (
+  const activeItems = items.filter(item => {
+    switch (active) {
+      case 'active':
+        return !item.completed
+      case 'completed':
+        return item.completed
+      default:
+        return true
+    }
+  })
+  const todos = activeItems.map((item, index) => (
     <Draggable key={item.id} index={index} draggableId={item.id.toString()}>
       {(provided, snapshot) => (
         <div
@@ -73,11 +87,22 @@ export default function DndList (): JSX.Element {
   return (
     <DragDropContext
       onDragEnd={({ destination, source }) => {
+        let from = source.index
+        let to = destination != null ? destination.index : 0
+
+        // finds indexes of items, if used filter (all, active, completed links)
+        if (active !== 'all') {
+          const fromActive = activeItems[from]
+          const toActive = activeItems[to]
+          from = items.findIndex(item => item.id === fromActive.id)
+          to = items.findIndex(item => item.id === toActive.id)
+        }
+
         itemsDispatch({
           type: 'ITEMS_REORDER',
           payload: {
-            from: source.index,
-            to: destination != null ? destination.index : 0
+            from,
+            to
           }
         })
       }}
