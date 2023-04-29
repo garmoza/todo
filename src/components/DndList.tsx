@@ -50,7 +50,7 @@ interface DndListProps {
   active: string
 }
 
-export default function DndList ({ active }: DndListProps): JSX.Element {
+function DndList ({ active }: DndListProps): JSX.Element {
   const { classes, cx } = useStyles()
   const [items, itemsDispatch] = useItemsReducer()
 
@@ -118,3 +118,5 @@ export default function DndList ({ active }: DndListProps): JSX.Element {
     </DragDropContext>
   )
 }
+
+export default DndList

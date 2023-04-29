@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
   }
 }))
 
-export default function Item ({ id, title, completed }: TodoItem): JSX.Element {
+function Item ({ id, title, completed }: TodoItem): JSX.Element {
   return (
     <>{completed ? <CompletedItem id={id} title={title} completed={completed} /> : <ActiveItem id={id} title={title} completed={completed} />}</>
   )
@@ -145,3 +145,6 @@ function CompletedItem ({ id, title, completed }: TodoItem): JSX.Element {
     </div>
   )
 }
+
+export { ActiveItem, CompletedItem }
+export default Item
