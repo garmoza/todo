@@ -30,6 +30,14 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'flex-end',
     marginBottom: '-10px',
     marginRight: '-20px'
+  },
+  iconButton: {
+    '&:hover': {
+      cursor: 'pointer'
+    },
+    '&:active': {
+      transform: 'scale(0.95)'
+    }
   }
 }))
 
@@ -60,6 +68,7 @@ function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
             }}
           />
           <IconCheck
+            className={classes.iconButton}
             onClick={() => {
               itemsDispatch({
                 type: 'ITEM_UPDATE',
@@ -79,8 +88,8 @@ function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
           <h3>{inputValue}</h3>
           <div className={classes.icons}>
             <div>
-            <IconEdit onClick={() => { setIsEditing(!isEditing) }} />
-            <IconTrash color='red' onClick={() => {
+            <IconEdit className={classes.iconButton} onClick={() => { setIsEditing(!isEditing) }} />
+            <IconTrash color='red' className={classes.iconButton} onClick={() => {
               itemsDispatch({
                 type: 'ITEM_REMOVE',
                 payload: {
@@ -92,7 +101,7 @@ function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
             }} />
             </div>
             <div className={classes.bottomIcons}>
-            <IconCircleCheckFilled size={rem(40)} onClick={() => {
+            <IconCircleCheckFilled size={rem(40)} className={classes.iconButton} onClick={() => {
               itemsDispatch({
                 type: 'ITEM_UPDATE',
                 payload: {
@@ -121,7 +130,7 @@ function CompletedItem ({ id, title, completed }: TodoItem): JSX.Element {
       <h3>{title}</h3>
       <div className={classes.icons}>
         <div>
-        <IconTrash color='red' onClick={() => {
+        <IconTrash color='red' className={classes.iconButton} onClick={() => {
           itemsDispatch({
             type: 'ITEM_REMOVE',
             payload: {
