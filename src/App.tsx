@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import type { FC } from 'react'
 
 import DndList from './components/DndList'
 import NewItemForm from './components/NewItemForm'
@@ -32,7 +33,7 @@ const links = [
   }
 ]
 
-function App (): JSX.Element {
+const App: FC = () => {
   const { classes } = useStyles()
 
   const [active, setActive] = useState(links[0].link)
@@ -52,3 +53,4 @@ function App (): JSX.Element {
 }
 
 export default App
+export { links }
