@@ -54,7 +54,11 @@ const NewItemForm: FC = () => {
         onChange={(event) => { setNewItem(event.target.value) }}
         className={classes.input}
       ></Input>
-      <Button type='submit' className={classes.button}>
+      <Button
+        type='submit'
+        className={classes.button}
+        disabled={newItem === ''}
+      >
         Add
       </Button>
     </form>

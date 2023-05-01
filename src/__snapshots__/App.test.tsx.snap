@@ -1,0 +1,1047 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders snapshot 1`] = `
+Array [
+  <header
+    className="mantine-Header-root mantine-1pdp58y"
+  >
+    <div
+      className="mantine-Container-root mantine-mvybs9"
+    >
+      <div
+        className="mantine-Group-root mantine-8kg80x"
+      >
+        <a
+          className="mantine-1vrimek"
+          href="all"
+          onClick={[Function]}
+        >
+          All
+        </a>
+        <a
+          className="mantine-1da2dr3"
+          href="active"
+          onClick={[Function]}
+        >
+          Active
+        </a>
+        <a
+          className="mantine-1da2dr3"
+          href="completed"
+          onClick={[Function]}
+        >
+          Completed
+        </a>
+      </div>
+      <div
+        className="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
+      >
+        <div
+          className="mantine-14n9mxy mantine-Switch-body"
+        >
+          <input
+            checked={false}
+            className="mantine-19htmtn mantine-Switch-input"
+            id="theme-switch"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="mantine-dah7wh mantine-Switch-track"
+            htmlFor="theme-switch"
+          >
+            <div
+              className="mantine-x4nrms mantine-Switch-thumb"
+            />
+            <div
+              className="mantine-12p07gz mantine-Switch-trackLabel"
+            >
+              <svg
+                className="tabler-icon tabler-icon-moon-stars"
+                fill="none"
+                height="1.25rem"
+                stroke="#868e96"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                viewBox="0 0 24 24"
+                width="1.25rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+                />
+                <path
+                  d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"
+                />
+                <path
+                  d="M19 11h2m-1 -1v2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            className="mantine-xynbgb mantine-Switch-labelWrapper"
+          />
+        </div>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="mantine-18ohdx6"
+  >
+    <h2>
+      TODO App
+    </h2>
+    <div
+      className="mantine-Paper-root mantine-Card-root mantine-17774e9"
+      data-with-border={true}
+    >
+      <form
+        className="mantine-87igg3"
+        onSubmit={[Function]}
+      >
+        <div
+          className="mantine-Input-wrapper mantine-1ob1ilc"
+        >
+          <input
+            aria-invalid={false}
+            className="mantine-Input-input mantine-g9emdi"
+            onChange={[Function]}
+            value=""
+          />
+        </div>
+        <button
+          className="mantine-UnstyledButton-root mantine-Button-root mantine-14gtqep"
+          data-button={true}
+          data-disabled={true}
+          disabled={true}
+          type="submit"
+        >
+          <div
+            className="mantine-1wpc1xj mantine-Button-inner"
+          >
+            <span
+              className="mantine-1ryt1ht mantine-Button-label"
+              style={
+                Object {
+                  "textTransform": undefined,
+                }
+              }
+            >
+              Add
+            </span>
+          </div>
+        </button>
+      </form>
+      <div
+        data-rbd-droppable-context-id="5"
+        data-rbd-droppable-id="dnd-list"
+      >
+        <div
+          className="mantine-zcahyw"
+          data-rbd-draggable-context-id="5"
+          data-rbd-draggable-id="0"
+          onTransitionEnd={null}
+          style={
+            Object {
+              "transform": null,
+              "transition": null,
+            }
+          }
+        >
+          <div
+            aria-describedby="rbd-hidden-text-5-hidden-text-25"
+            className="mantine-el3sms"
+            data-rbd-drag-handle-context-id="5"
+            data-rbd-drag-handle-draggable-id="0"
+            draggable={false}
+            onDragStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              className="tabler-icon tabler-icon-grip-vertical"
+              fill="none"
+              height="1.05rem"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              viewBox="0 0 24 24"
+              width="1.05rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+            </svg>
+          </div>
+          <div
+            className="mantine-al63dd"
+          >
+            <h3>
+              Add DOM elements
+            </h3>
+            <div
+              className="mantine-p1q310"
+            >
+              <div>
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height={24}
+                  onClick={[Function]}
+                  stroke="red"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 7l16 0"
+                  />
+                  <path
+                    d="M10 11l0 6"
+                  />
+                  <path
+                    d="M14 11l0 6"
+                  />
+                  <path
+                    d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+                  />
+                  <path
+                    d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="mantine-1vrbd6e"
+          data-rbd-draggable-context-id="5"
+          data-rbd-draggable-id="1"
+          onTransitionEnd={null}
+          style={
+            Object {
+              "transform": null,
+              "transition": null,
+            }
+          }
+        >
+          <div
+            aria-describedby="rbd-hidden-text-5-hidden-text-25"
+            className="mantine-el3sms"
+            data-rbd-drag-handle-context-id="5"
+            data-rbd-drag-handle-draggable-id="1"
+            draggable={false}
+            onDragStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              className="tabler-icon tabler-icon-grip-vertical"
+              fill="none"
+              height="1.05rem"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              viewBox="0 0 24 24"
+              width="1.05rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+            </svg>
+          </div>
+          <div
+            className="mantine-al63dd"
+          >
+            <h3>
+              Save info to localStorage
+            </h3>
+            <div
+              className="mantine-p1q310"
+            >
+              <div>
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height={24}
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+                  />
+                  <path
+                    d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+                  />
+                  <path
+                    d="M16 5l3 3"
+                  />
+                </svg>
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height={24}
+                  onClick={[Function]}
+                  stroke="red"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 7l16 0"
+                  />
+                  <path
+                    d="M10 11l0 6"
+                  />
+                  <path
+                    d="M14 11l0 6"
+                  />
+                  <path
+                    d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+                  />
+                  <path
+                    d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+                  />
+                </svg>
+              </div>
+              <div
+                className="mantine-1ed40fq"
+              >
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height="2.5rem"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width="2.5rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"
+                    fill="currentColor"
+                    strokeWidth="0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="mantine-1vrbd6e"
+          data-rbd-draggable-context-id="5"
+          data-rbd-draggable-id="2"
+          onTransitionEnd={null}
+          style={
+            Object {
+              "transform": null,
+              "transition": null,
+            }
+          }
+        >
+          <div
+            aria-describedby="rbd-hidden-text-5-hidden-text-25"
+            className="mantine-el3sms"
+            data-rbd-drag-handle-context-id="5"
+            data-rbd-drag-handle-draggable-id="2"
+            draggable={false}
+            onDragStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              className="tabler-icon tabler-icon-grip-vertical"
+              fill="none"
+              height="1.05rem"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              viewBox="0 0 24 24"
+              width="1.05rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+              <path
+                d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+              />
+            </svg>
+          </div>
+          <div
+            className="mantine-al63dd"
+          >
+            <h3>
+              Add handlers
+            </h3>
+            <div
+              className="mantine-p1q310"
+            >
+              <div>
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height={24}
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+                  />
+                  <path
+                    d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+                  />
+                  <path
+                    d="M16 5l3 3"
+                  />
+                </svg>
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height={24}
+                  onClick={[Function]}
+                  stroke="red"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 7l16 0"
+                  />
+                  <path
+                    d="M10 11l0 6"
+                  />
+                  <path
+                    d="M14 11l0 6"
+                  />
+                  <path
+                    d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+                  />
+                  <path
+                    d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+                  />
+                </svg>
+              </div>
+              <div
+                className="mantine-1ed40fq"
+              >
+                <svg
+                  className="mantine-1qrxfj3"
+                  fill="none"
+                  height="2.5rem"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  width="2.5rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"
+                    fill="currentColor"
+                    strokeWidth="0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`<DndList /> renders snapshot 1`] = `
+<div
+  data-rbd-droppable-context-id="0"
+  data-rbd-droppable-id="dnd-list"
+>
+  <div
+    className="mantine-zcahyw"
+    data-rbd-draggable-context-id="0"
+    data-rbd-draggable-id="0"
+    onTransitionEnd={null}
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+  >
+    <div
+      aria-describedby="rbd-hidden-text-0-hidden-text-0"
+      className="mantine-el3sms"
+      data-rbd-drag-handle-context-id="0"
+      data-rbd-drag-handle-draggable-id="0"
+      draggable={false}
+      onDragStart={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <svg
+        className="tabler-icon tabler-icon-grip-vertical"
+        fill="none"
+        height="1.05rem"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+        width="1.05rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+      </svg>
+    </div>
+    <div
+      className="mantine-al63dd"
+    >
+      <h3>
+        Add DOM elements
+      </h3>
+      <div
+        className="mantine-p1q310"
+      >
+        <div>
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height={24}
+            onClick={[Function]}
+            stroke="red"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 7l16 0"
+            />
+            <path
+              d="M10 11l0 6"
+            />
+            <path
+              d="M14 11l0 6"
+            />
+            <path
+              d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+            />
+            <path
+              d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mantine-1vrbd6e"
+    data-rbd-draggable-context-id="0"
+    data-rbd-draggable-id="1"
+    onTransitionEnd={null}
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+  >
+    <div
+      aria-describedby="rbd-hidden-text-0-hidden-text-0"
+      className="mantine-el3sms"
+      data-rbd-drag-handle-context-id="0"
+      data-rbd-drag-handle-draggable-id="1"
+      draggable={false}
+      onDragStart={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <svg
+        className="tabler-icon tabler-icon-grip-vertical"
+        fill="none"
+        height="1.05rem"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+        width="1.05rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+      </svg>
+    </div>
+    <div
+      className="mantine-al63dd"
+    >
+      <h3>
+        Save info to localStorage
+      </h3>
+      <div
+        className="mantine-p1q310"
+      >
+        <div>
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height={24}
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+            />
+            <path
+              d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+            />
+            <path
+              d="M16 5l3 3"
+            />
+          </svg>
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height={24}
+            onClick={[Function]}
+            stroke="red"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 7l16 0"
+            />
+            <path
+              d="M10 11l0 6"
+            />
+            <path
+              d="M14 11l0 6"
+            />
+            <path
+              d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+            />
+            <path
+              d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+            />
+          </svg>
+        </div>
+        <div
+          className="mantine-1ed40fq"
+        >
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height="2.5rem"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width="2.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"
+              fill="currentColor"
+              strokeWidth="0"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mantine-1vrbd6e"
+    data-rbd-draggable-context-id="0"
+    data-rbd-draggable-id="2"
+    onTransitionEnd={null}
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+  >
+    <div
+      aria-describedby="rbd-hidden-text-0-hidden-text-0"
+      className="mantine-el3sms"
+      data-rbd-drag-handle-context-id="0"
+      data-rbd-drag-handle-draggable-id="2"
+      draggable={false}
+      onDragStart={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <svg
+        className="tabler-icon tabler-icon-grip-vertical"
+        fill="none"
+        height="1.05rem"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+        width="1.05rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M9 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+        <path
+          d="M15 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        />
+      </svg>
+    </div>
+    <div
+      className="mantine-al63dd"
+    >
+      <h3>
+        Add handlers
+      </h3>
+      <div
+        className="mantine-p1q310"
+      >
+        <div>
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height={24}
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+            />
+            <path
+              d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+            />
+            <path
+              d="M16 5l3 3"
+            />
+          </svg>
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height={24}
+            onClick={[Function]}
+            stroke="red"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 7l16 0"
+            />
+            <path
+              d="M10 11l0 6"
+            />
+            <path
+              d="M14 11l0 6"
+            />
+            <path
+              d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
+            />
+            <path
+              d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+            />
+          </svg>
+        </div>
+        <div
+          className="mantine-1ed40fq"
+        >
+          <svg
+            className="mantine-1qrxfj3"
+            fill="none"
+            height="2.5rem"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width="2.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"
+              fill="currentColor"
+              strokeWidth="0"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NewItemForm /> renders snapshot 1`] = `
+<form
+  className="mantine-87igg3"
+  onSubmit={[Function]}
+>
+  <div
+    className="mantine-Input-wrapper mantine-1ob1ilc"
+  >
+    <input
+      aria-invalid={false}
+      className="mantine-Input-input mantine-g9emdi"
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <button
+    className="mantine-UnstyledButton-root mantine-Button-root mantine-14gtqep"
+    data-button={true}
+    data-disabled={true}
+    disabled={true}
+    type="submit"
+  >
+    <div
+      className="mantine-1wpc1xj mantine-Button-inner"
+    >
+      <span
+        className="mantine-1ryt1ht mantine-Button-label"
+        style={
+          Object {
+            "textTransform": undefined,
+          }
+        }
+      >
+        Add
+      </span>
+    </div>
+  </button>
+</form>
+`;
+
+exports[`<SimpleHeader /> renders snapshot 1`] = `
+<header
+  className="mantine-Header-root mantine-1pdp58y"
+>
+  <div
+    className="mantine-Container-root mantine-mvybs9"
+  >
+    <div
+      className="mantine-Group-root mantine-8kg80x"
+    >
+      <a
+        className="mantine-1vrimek"
+        href="all"
+        onClick={[Function]}
+      >
+        All
+      </a>
+      <a
+        className="mantine-1da2dr3"
+        href="active"
+        onClick={[Function]}
+      >
+        Active
+      </a>
+      <a
+        className="mantine-1da2dr3"
+        href="completed"
+        onClick={[Function]}
+      >
+        Completed
+      </a>
+    </div>
+    <div
+      className="mantine-Switch-root mantine-Switch-root mantine-1knyxmk"
+    >
+      <div
+        className="mantine-14n9mxy mantine-Switch-body"
+      >
+        <input
+          checked={false}
+          className="mantine-19htmtn mantine-Switch-input"
+          id="theme-switch"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="mantine-dah7wh mantine-Switch-track"
+          htmlFor="theme-switch"
+        >
+          <div
+            className="mantine-x4nrms mantine-Switch-thumb"
+          />
+          <div
+            className="mantine-12p07gz mantine-Switch-trackLabel"
+          >
+            <svg
+              className="tabler-icon tabler-icon-moon-stars"
+              fill="none"
+              height="1.25rem"
+              stroke="#868e96"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              viewBox="0 0 24 24"
+              width="1.25rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+              />
+              <path
+                d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"
+              />
+              <path
+                d="M19 11h2m-1 -1v2"
+              />
+            </svg>
+          </div>
+        </label>
+        <div
+          className="mantine-xynbgb mantine-Switch-labelWrapper"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+`;

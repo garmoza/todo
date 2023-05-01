@@ -87,6 +87,7 @@ const SwitchToggle: FC = () => {
 
   return (
     <Switch
+        id='theme-switch'
         checked={colorScheme === 'dark'}
         onChange={() => { toggleColorScheme() }}
         size="lg"

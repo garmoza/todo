@@ -65,3 +65,27 @@ To work a linter with a typescript (adds to package.json)
   "project": "tsconfig.json"
 },
 ```
+
+Error during test rendering
+```
+console.error
+  react-beautiful-dnd
+  
+  A setup problem was encountered.
+  
+  > Invariant failed: 
+  provided.innerRef has not been provided with a HTMLElement.
+  
+  You can find a guide on using the innerRef callback functions at:
+  https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/guides/using-inner-ref.md
+  
+  👷‍ This is a development only message. It will be removed in production builds.
+
+    at log (node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.cjs.js:46:30)
+    at node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.cjs.js:5533:9
+    at commitHookEffectListMount (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:12999:26)
+    at commitPassiveMountOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14422:11)
+    at commitPassiveMountEffects_complete (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14382:9)
+    at commitPassiveMountEffects_begin (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14369:7)
+    at commitPassiveMountEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14357:3)
+```

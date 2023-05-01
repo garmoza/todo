@@ -4,9 +4,10 @@ import renderer from 'react-test-renderer'
 import { AppProvider } from './components/AppContext'
 import SimpleHeader from './components/SimpleHeader'
 import type { SimpleHeaderProps } from './components/SimpleHeader'
-import { Switch } from '@mantine/core'
+import { Button, Switch } from '@mantine/core'
 import App, { links } from './App'
 import DndList from './components/DndList'
+import NewItemForm from './components/NewItemForm'
 
 describe('<SimpleHeader />', () => {
   const props: SimpleHeaderProps = {
@@ -58,6 +59,57 @@ describe('<SimpleHeader />', () => {
       expect(props.setActive).toHaveBeenCalledWith(link)
     })
   })
+
+  it('renders snapshot', () => {
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
+})
+
+describe('<NewItemForm />', () => {
+  let testRenderer: renderer.ReactTestRenderer, testInstance: renderer.ReactTestInstance
+
+  beforeEach(() => {
+    testRenderer = renderer.create(
+      <AppProvider>
+        <NewItemForm />
+      </AppProvider>
+    )
+    testInstance = testRenderer.root
+  })
+
+  it('disables the button', () => {
+    expect(
+      testInstance.findByType(Button).props.disabled
+    ).toBeTruthy()
+  })
+
+  // ! doesn't work because it uses localStorage
+  // it('change the input field', async () => {
+  //   const pseudoEvent = { target: 'New Todo' }
+  //   const input = testInstance.findByType(Input)
+
+  //   await renderer.act(async () => {
+  //     input.props.onChange(pseudoEvent)
+  //   })
+
+  //   expect(input.props.value).toEqual('New Todo')
+  // })
+
+  it('renders snapshot', () => {
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
+})
+
+describe('<DndList />', () => {
+  const testRenderer = renderer.create(
+    <AppProvider>
+      <DndList active='all' />
+    </AppProvider>
+  )
+
+  it('renders snapshot', () => {
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
 })
 
 describe('<App />', () => {
@@ -107,5 +159,9 @@ describe('<App />', () => {
     })
 
     expect(dndList.props.active).toEqual('completed')
+  })
+
+  it('renders snapshot', () => {
+    expect(testRenderer.toJSON()).toMatchSnapshot()
   })
 })
