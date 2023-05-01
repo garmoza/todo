@@ -45,7 +45,7 @@ interface Link {
   label: string
 }
 
-interface SimpleHeaderProps {
+export interface SimpleHeaderProps {
   links: Link[]
   active: string
   setActive: React.Dispatch<React.SetStateAction<string>>

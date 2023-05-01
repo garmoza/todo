@@ -1,38 +1,40 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Item, { ActiveItem } from './components/Item'
+import { AppProvider } from './components/AppContext'
+import SimpleHeader from './components/SimpleHeader'
+import type { SimpleHeaderProps } from './components/SimpleHeader'
 
-describe('truthy and falsy', () => {
-  it('true to be true', () => {
-    expect(true).toBe(true)
-  })
-
-  it('false to be false', () => {
-    expect(false).toBe(false)
-  })
-})
-
-describe('Item', () => {
-  const item = {
-    id: 1,
-    title: 'Test todo',
-    completed: false
+describe('SimpleHeader', () => {
+  const props: SimpleHeaderProps = {
+    links: [
+      {
+        link: 'all',
+        label: 'All'
+      },
+      {
+        link: 'active',
+        label: 'Active'
+      },
+      {
+        link: 'completed',
+        label: 'Completed'
+      }
+    ],
+    active: 'all',
+    setActive: jest.fn()
   }
 
-  it('renders all properties', () => {
-    const component = renderer.create(<Item {...item} />)
+  const component = renderer.create(
+    <AppProvider>
+      <SimpleHeader {...props} />
+    </AppProvider>
+  )
 
-    expect(component.root.findByType('h3').children).toEqual(
-      ['Test todo']
-    )
-  })
-
-  it('completed flag', () => {
-    const component = renderer.create(<Item {...item} />)
-
-    expect(component.root.findByType(ActiveItem).props.completed).toEqual(
-      false
-    )
+  it('renders links', () => {
+    expect(
+      component.root.findAllByProps({ children: 'All' })
+        .length
+    ).toEqual(1)
   })
 })
