@@ -1,4 +1,5 @@
 import React from 'react'
+import type { FC } from 'react'
 import { createStyles, rem } from '@mantine/core'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { IconGripVertical } from '@tabler/icons-react'
@@ -50,7 +51,7 @@ interface DndListProps {
   active: string
 }
 
-function DndList ({ active }: DndListProps): JSX.Element {
+const DndList: FC<DndListProps> = ({ active }) => {
   const { classes, cx } = useStyles()
   const [items, itemsDispatch] = useItemsReducer()
 

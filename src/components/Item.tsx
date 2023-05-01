@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import type { FC } from 'react'
 import { Input, createStyles, rem } from '@mantine/core'
 import { IconTrash, IconEdit, IconCheck, IconCircleCheckFilled } from '@tabler/icons-react'
 
@@ -41,13 +42,13 @@ const useStyles = createStyles((theme) => ({
   }
 }))
 
-function Item ({ id, title, completed }: TodoItem): JSX.Element {
+const Item: FC<TodoItem> = ({ id, title, completed }) => {
   return (
     <>{completed ? <CompletedItem id={id} title={title} completed={completed} /> : <ActiveItem id={id} title={title} completed={completed} />}</>
   )
 }
 
-function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
+const ActiveItem: FC<TodoItem> = ({ id, title, completed }) => {
   const itemsDispatch = useItemsDispatch()
 
   const [isEditing, setIsEditing] = useState(false)
@@ -120,7 +121,7 @@ function ActiveItem ({ id, title, completed }: TodoItem): JSX.Element {
   )
 }
 
-function CompletedItem ({ id, title, completed }: TodoItem): JSX.Element {
+const CompletedItem: FC<TodoItem> = ({ id, title, completed }) => {
   const itemsDispatch = useItemsDispatch()
 
   const { classes } = useStyles()

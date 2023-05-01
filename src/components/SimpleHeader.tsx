@@ -1,4 +1,5 @@
 import React from 'react'
+import type { FC } from 'react'
 import { Header, useMantineColorScheme, useMantineTheme, Switch, Container, Group, createStyles, rem } from '@mantine/core'
 import { IconSun, IconMoonStars } from '@tabler/icons-react'
 
@@ -50,7 +51,7 @@ interface SimpleHeaderProps {
   setActive: React.Dispatch<React.SetStateAction<string>>
 }
 
-export default function SimpleHeader ({ links, active, setActive }: SimpleHeaderProps): JSX.Element {
+const SimpleHeader: FC<SimpleHeaderProps> = ({ links, active, setActive }) => {
   const { classes, cx } = useStyles()
 
   const items = links.map((link) => (
@@ -80,7 +81,7 @@ export default function SimpleHeader ({ links, active, setActive }: SimpleHeader
   )
 }
 
-function SwitchToggle (): JSX.Element {
+const SwitchToggle: FC = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
   const theme = useMantineTheme()
 
@@ -94,3 +95,5 @@ function SwitchToggle (): JSX.Element {
       />
   )
 }
+
+export default SimpleHeader

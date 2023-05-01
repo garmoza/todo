@@ -1,4 +1,5 @@
 import React from 'react'
+import type { FC } from 'react'
 
 import { useLocalStorageState } from '../hooks/semiPersistent'
 import { useItemsReducer } from './ItemsContext'
@@ -18,7 +19,7 @@ const useStyles = createStyles(() => ({
   }
 }))
 
-export default function NewItemForm (): JSX.Element {
+const NewItemForm: FC = () => {
   const [items, itemsDispatch] = useItemsReducer()
 
   const [newItem, setNewItem] = useLocalStorageState('newItem', '')
@@ -59,3 +60,5 @@ export default function NewItemForm (): JSX.Element {
     </form>
   )
 }
+
+export default NewItemForm
