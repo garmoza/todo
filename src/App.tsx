@@ -44,7 +44,7 @@ const App: FC = () => {
       <div className={classes.page}>
         <h2>TODO App</h2>
         <Card withBorder radius="md" className={classes.card}>
-          <NewItemForm />
+          {active !== 'completed' && <NewItemForm />}
           <DndList active={active} />
         </Card>
       </div>
