@@ -64,7 +64,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Problems
 
-To work a linter with a typescript (adds to package.json)
+To work a linter with a typescript (adds to .eslintrc.json)
 ```
 "parserOptions": {
   ...
